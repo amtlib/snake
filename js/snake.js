@@ -30,7 +30,7 @@ function Snake() {
             food.generate();
         }
     };
-    this.leaves_board = function(){
+    this.leaves_board = function () {
         var accual_head = this.snake_body[0];
         if (accual_head.x >= columns || accual_head.x < 0 || accual_head.y >= rows || accual_head.y < 0) {
             return true;
@@ -50,10 +50,10 @@ function Snake() {
             this.direction = direction;
         }
     };
-    this.eats_himself = function(){
+    this.eats_himself = function () {
         var head = this.snake_body[0];
-        for(var i = 1;i< this.snake_body.length; i++){
-            if(head.x == this.snake_body[i].x && head.y == this.snake_body[i].y){
+        for (var i = 1; i < this.snake_body.length; i++) {
+            if (head.x == this.snake_body[i].x && head.y == this.snake_body[i].y) {
                 return true;
             }
         }
