@@ -37,15 +37,15 @@ function draw(){
 
 function keyPressed(){
     if(keyCode == UP_ARROW){
-        snake.direction = 0;
+        snake.change_direction_to(0);
     }
     else if(keyCode == LEFT_ARROW){
-        snake.direction = 1;
+        snake.change_direction_to(1);
     }
     else if(keyCode == DOWN_ARROW){
-        snake.direction = 2;
+        snake.change_direction_to(2);
     }
     else if(keyCode == RIGHT_ARROW){
-        snake.direction = 3;
+        snake.change_direction_to(3);
     }
 }

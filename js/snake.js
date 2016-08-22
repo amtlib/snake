@@ -21,7 +21,15 @@ function Snake(){
             this.snake_body.unshift(new Cell(accual_head.x+1, accual_head.y, cell_size));
         }
     }
-
+    this.change_direction_to = function(direction){
+        //when snake moves up - it can not move down
+        //when snake moves down - it can not move up
+        //when snake moves left - it can not move right
+        //when snake moves right - it can not move left
+        if(!(direction == 0 && this.direction == 2) && !(direction == 2 && this.direction == 0) && !(direction == 1 && this.direction == 3) && !(direction == 3 && this.direction == 1)){
+            this.direction = direction;
+        }
+    }
     this.draw_me = function(){
         this.update();
         for(var i = 0;i<this.snake_body.length; i++){
