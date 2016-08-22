@@ -20,6 +20,12 @@ function Snake(){
         } else if(this.direction == 3){ //if snake goes left
             this.snake_body.unshift(new Cell(accual_head.x+1, accual_head.y, cell_size));
         }
+
+        accual_head = this.snake_body[0];
+
+        if(accual_head.x > columns || accual_head.x < 0 || accual_head.y > rows || accual_head.y < 0){
+            setup();
+        }
     }
     this.change_direction_to = function(direction){
         //when snake moves up - it can not move down
