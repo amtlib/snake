@@ -23,7 +23,7 @@ function Snake(){
 
         accual_head = this.snake_body[0];
 
-        if(accual_head.x > columns || accual_head.x < 0 || accual_head.y > rows || accual_head.y < 0){
+        if(accual_head.x >= columns || accual_head.x < 0 || accual_head.y >= rows || accual_head.y < 0){
             setup();
         }
     }

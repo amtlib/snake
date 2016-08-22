@@ -3,6 +3,7 @@ var columns, rows;
 var cell_size = 10;
 
 var snake;
+var food;
 
 function setup(){
     createCanvas(800, 600);
@@ -22,6 +23,8 @@ function setup(){
     }
 
     snake = new Snake(new Cell(floor(random(columns)), floor(random(rows)), cell_size));
+    food = new Food();
+    food.generate();
 }
 function draw(){
     background('#212121');
@@ -33,6 +36,7 @@ function draw(){
 
     }
     snake.draw_me();
+    food.draw_me();
 }
 
 function keyPressed(){
