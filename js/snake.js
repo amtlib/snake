@@ -23,7 +23,7 @@ function Snake() {
         }
         accual_head = this.snake_body[0];
         if (this.leaves_board() || this.eats_himself()) {
-            setup();
+            init();
         }
         if (accual_head.x == food.position.x && accual_head.y == food.position.y) {
             this.make_longer();

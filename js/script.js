@@ -11,7 +11,10 @@ function setup(){
     //columns and rows in grid
     columns = floor(width/cell_size);
     rows = floor(height/cell_size);
+    init();
 
+}
+function init(){
     grid = new Array(columns);
     for(var i = 0;i< columns; i++){
         grid[i] = new Array(rows);
