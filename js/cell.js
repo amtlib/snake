@@ -8,6 +8,7 @@ function Cell(x, y, size){
         if(color){
             fill(color);
         }
+        noStroke();
         rect(this.x*this.size, this.y * this.size, this.size, this.size);
     };
 }
