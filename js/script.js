@@ -2,6 +2,8 @@ var grid;
 var columns, rows;
 var cell_size = 10;
 
+var snake;
+
 function setup(){
     createCanvas(800, 600);
 
@@ -18,6 +20,8 @@ function setup(){
             grid[i][j] = new Cell(i, j, cell_size);
         }
     }
+
+    snake = new Snake(new Cell(floor(random(columns)), floor(random(rows)), cell_size));
 }
 function draw(){
     background('#212121');
@@ -27,5 +31,21 @@ function draw(){
             grid[i][j].draw_me();
         }
 
+    }
+    snake.draw_me();
+}
+
+function keyPressed(){
+    if(keyCode == UP_ARROW){
+        snake.direction = 0;
+    }
+    else if(keyCode == LEFT_ARROW){
+        snake.direction = 1;
+    }
+    else if(keyCode == DOWN_ARROW){
+        snake.direction = 2;
+    }
+    else if(keyCode == RIGHT_ARROW){
+        snake.direction = 3;
     }
 }
