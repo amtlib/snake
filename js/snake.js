@@ -29,9 +29,6 @@ function Snake() {
             this.make_longer();
             food.generate();
         }
-
-
-
     };
     this.leaves_board = function () {
         var accual_head = this.snake_body[0];
@@ -43,7 +40,6 @@ function Snake() {
     this.make_longer = function () {
         var head = this.snake_body[0];
         this.snake_body.unshift(new Cell(head.x, head.y));
-
         //snake moves faser and faster
         game_speed += 2;
     };

@@ -2,7 +2,6 @@ var columns, rows;
 var cell_size = 10;
 var snake;
 var food;
-
 var game_speed = 12;
 
 function setup() {
