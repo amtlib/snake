@@ -1,8 +1,9 @@
-var grid;
 var columns, rows;
 var cell_size = 10;
 var snake;
 var food;
+
+var game_speed = 12;
 
 function setup() {
     createCanvas(800, 600);
@@ -13,27 +14,15 @@ function setup() {
 }
 
 function init() {
-    grid = new Array(columns);
-    for (var i = 0; i < columns; i++) {
-        grid[i] = new Array(rows);
-    }
-    for (var i = 0; i < columns; i++) {
-        for (var j = 0; j < rows; j++) {
-            grid[i][j] = new Cell(i, j, cell_size);
-        }
-    }
+    game_speed = 12;
     snake = new Snake(new Cell(floor(random(columns)), floor(random(rows)), cell_size));
     food = new Food();
     food.generate();
 }
 
 function draw() {
-    background('#212121');
-    for (var i = 0; i < columns; i++) {
-        for (var j = 0; j < rows; j++) {
-            grid[i][j].draw_me();
-        }
-    }
+    frameRate(game_speed);
+    background('#fff');
     snake.draw_me();
     food.draw_me();
 }
